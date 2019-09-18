@@ -7,4 +7,5 @@ int main(){
         result *= result;
     }
     printf("Potência de %d: %d\n", numero, result);
+    printf("\n");
 }

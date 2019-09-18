@@ -222,6 +222,10 @@ void ex12(){
     }
 }
 
+void ex13(){
+    printf("Hello!!!\n");
+}
+
 int main()
 {
     printf("Exercício 01\n");

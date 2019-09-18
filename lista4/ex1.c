@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int *cloneA(int vet[], int tam){
-    int *vetor = (int*) calloc (tam, sizeof(int));
+int *cloneA(int vetor[], int tam){
+    int *vet = (int*) calloc (tam, sizeof(int));
     for(int i = 0; i < tam; i++){
-        vetor[i] = vet[i];
+        vet[i] = vetor[i];
     }
     return vetor;
 }

@@ -19,6 +19,6 @@ int *preencheVetor(int intervalo){
 
 int main(){
     int intervalo=50;
-    int *vetor = preencheVetor(intervalo);
+    int *vet = preencheVetor(intervalo);
     return 0;
 }

@@ -1,40 +1,21 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-int *criaVetor(int tam, int valor){
-    int *v = (int*) calloc (tam, sizeof(int));
+int indice(int *vet, int tam){
+    int maior=-1000;
+    int maiorIndice;
     for(int i = 0; i < tam; i++){
-        v[i] = valor;
-    }
-    return v;
-}
-
-void preencheVetor(int *v, int tam){
-    int valor=10;
-    for(int i = 0; i < tam; i++){
-        v[i] = valor;
-        valor+=10;
-    }
-}
-
-int devolveIndice(int *v, int tam){
-    int valor=-10000, indice=0;
-    for(int i = 0; i < tam; i++){
-        if(v[i] > valor){
-            valor = v[i];
-            indice = i;
+        if(vet[i] >= maior){
+            maiorIndice = i;
+            maior = vet[i];
         }
     }
-    return indice;
+    return maiorIndice;
 }
 
 int main(){
     int tam=5;
-    int *vet;
-    vet = criaVetor(tam, 0);
-    preencheVetor(vet, tam);
-    printf("Índice do maior valor do vetor: %d\n", devolveIndice(vet,tam));
+    int vet[]={10,20,100,40,50};
+    int indiceMaior = (vet,tam);
+    printf("Índice do maior valor do vetor: %d\n", indiceMaior);
     return 0;
 }
-
-/*Escreva uma função que devolva o índice do maior elemento de um vetor.*/

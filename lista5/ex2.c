@@ -1,25 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int *vetorCloneA(int vetor[], int tam){
-    int *vet = (int*) calloc (tam, sizeof(int));
+void imprimeVetor(int vet[], int tam){
     for(int i = 0; i < tam; i++){
-        vet[i] = rand() % 50;
+        printf("%d ", vet[i]);
     }
+    printf("\n");
+}
+
+int *preencheVetor(int intervalo){
+    int *vet = (int*) calloc (10, sizeof(int));
+    for(int i = 0; i < 10; i++){
+        vet[i] = rand() % intervalo;
+    }
+    imprimeVetor(vet,10);
     return vet;
 }
 
-void imprimir(int *end, int tam){
-    for(int i = 0; i < tam; i++){
-        printf("v[%d] = %d\n", i,end[i]);
-    }
-}
-
 int main(){
-    int tam=10;
-    int vet[tam];
-    int *end = vetorCloneA(vet, tam);
-    imprimir(end, tam);
+    int intervalo=50;
+    int *vetor = preencheVetor(intervalo);
     return 0;
 }
-/*Escreva uma função que crie um vetor preenchido com valores aleatórios.*/

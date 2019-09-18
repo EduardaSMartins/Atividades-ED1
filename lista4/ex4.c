@@ -1,53 +1,59 @@
 #include <stdio.h>
 
-void intercalaVetores(int *v1, int tam1, int *v2, int tam2){
-    int v3[tam1+tam2];
-    int j=0;
-    int k=0;
-    for(int i = 0; i < tam1+tam2; i++){
-        if(v1[j] < v2[k]){
-            v3[i] = v1[j];
-            j++;
-        }else{
-            v3[i] = v2[k];
-            k++;
-        }
+void imprimeValor(int vet[], int tam){
+    printf("[");
+    for(int i = 0; i < tam; i++){
+        printf("%d ", vet[i]);
     }
+    printf("]\n");
 }
 
-int *IntercalaVetores(int *v1, int tam1, int *v2, int tam2, int *v3){
-    v3[tam1+tam2];
-    int j=0;
-    int k=0;
-    for(int i = 0; i < tam1+tam2; i++){
-        if(v1[j] < v2[k]){
-            v3[i] = v1[j];
-            j++;
-        }else{
-            v3[i] = v2[k];
-            k++;
+void intercala1(int vet1[], int tam1, int vet2[], int tam2){
+    int tam3=tam1+tam2;
+    int vet3[tam3];
+    int a=0, b=0;
+    for(int i = 0; i < tam3; i++){
+        if(i % 2 == 0 && a < tam1){
+            vet3[i] = vet1[a];
+            a++;
+        }else if(i % 2 != 0 && b < tam2){
+            vet3[i] = vet2[b];
+            b++;
         }
     }
+    imprimeValor(vet3,tam3);
+}
+
+void imprimeReferencia(int *vet, int tam){
+    printf("[");
+    for(int i = 0; i < tam; i++){
+        printf("%d ", vet[i]);
+    }
+    printf("]\n");
+}
+
+int *intercala2(int *v1, int tam1, int *v2, int tam2){
+    int tam3=tam1+tam2;
+    int v3[tam3];
+    int a=0, b=0;
+    for(int i = 0; i < tam3; i++){
+        if(i % 2 == 0 && a < tam1){
+            v3[i] = v1[a];
+            a++;
+        }else if(i % 2 != 0 && b < tam2){
+            v3[i] = v2[b];
+            b++;
+        }
+    }
+    imprimeReferencia(v3,tam3);
     return v3;
 }
 
 int main(){
-    int v1[] = {1,3,5};
-    int v2[] = {-1,2,4,6};
-    int tam1 = 3;
-    int tam2 = 4;
-    intercalaVetores(v1, tam1, v2, tam2);
-    int vet[tam1+tam2];
-    int *vetor = IntercalaVetores(v1,tam1,v2,tam2,&vet);
-    for(int i = 0; i < tam1+tam2; i++){
-        printf("%d ", vet[i]);
-    } 
+    int tam1=5, tam2=5;
+    int vet1[] = {10,20,30,40,50};
+    int vet2[] = {60,70,80,90,0};
+    intercala1(vet1, tam1, vet2, tam2);
+    int *retornoVetor = intercala2(&vet1, tam1,&vet2,tam2);
     return 0;
 }
-
-/*Escreva uma função para intercalar dois vetores. Assuma que os vetores recebidos já estão
-ordenados. Desenvolva duas versões desta função:
-a) usando a estratégia convencional
-b) usando a estratégia do scanf.
-
-*/

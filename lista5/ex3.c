@@ -1,21 +1,23 @@
 #include <stdio.h>
 
-int indice(int *vet, int tam){
-    int maior=-1000;
-    int maiorIndice;
-    for(int i = 0; i < tam; i++){
-        if(vet[i] >= maior){
-            maiorIndice = i;
-            maior = vet[i];
-        }
+void imprimeVetor(int vet[], int tam){
+    for (int i = 0; i < tam; i++){
+        printf("%d ",vet[i]);
     }
-    return maiorIndice;
+    printf("\n");
+}
+
+int *incrementa(int *vet, int tam){
+    for(int i = 0; i < tam; i++){
+        vet[i]++;
+    }
+    return vet;
 }
 
 int main(){
-    int tam=5;
-    int vet[]={10,20,100,40,50};
-    int indiceMaior = (vet,tam);
-    printf("Índice do maior valor do vetor: %d\n", indiceMaior);
+    int tam=10;
+    int vet[] = {5,10,15,20,25,30,35,40,45,50};
+    int *vetor = incrementa(&vet,tam);
+    imprimeVetor(vetor,tam);
     return 0;
 }

@@ -14,9 +14,6 @@ char conc(float nota){
     }
 }
 
-void conceito(char *conceito){
-    
-}
 
 int main(){
     //Teste 1
@@ -27,6 +24,5 @@ int main(){
     
     //Tese 2
     char conceito;
-    conceito(&conceito);
     return 0;
 }

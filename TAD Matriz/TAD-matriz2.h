@@ -38,10 +38,29 @@ void matriz_destroi(Matriz *m){
     free(m->matriz);
 }
 
-void matriz_acessa2(Matriz *m, int lin, int col, int *end);
-void matriz_atribui(Matriz *m, int lin, int col, int valor);
-void matriz_imprime(Matriz *m);
-int matriz_linhas(Matriz *m);
-int matriz_colunas(Matriz *m);
-//Altera os elementos da matriz
-void matriz_map2(Matriz *m, int (*funcao)(int));
+void matriz_acessa2(Matriz *m, int lin, int col, int *end){
+    *end = m->matriz[lin][col];
+    printf("Elemento da posição [%d][%d] = [%d]\n", lin,col,*end);
+}
+
+void matriz_atribui(Matriz *m, int lin, int col, int valor){
+    m->matriz[lin][col] = valor;    
+}
+
+void matriz_imprime(Matriz *m){
+    int linhas = m->linhas;
+    int colunas = m->colunas;
+    for(int i = 0; i < linhas; i++){
+        for(int j = 0; j < colunas; j++){
+            printf("Elemento [%d][%d] = [%d]\n", m->linhas,m->colunas,m->matriz[linhas][colunas]);
+        }
+        printf("\n");
+    }
+}
+
+int matriz_linhas(Matriz *m){
+    return m->linhas;
+}
+int matriz_colunas(Matriz *m){
+    return m->colunas;
+}

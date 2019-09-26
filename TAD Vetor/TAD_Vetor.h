@@ -8,6 +8,7 @@ typedef struct{
     int lenght;
 }Vetor;
 
+
 //CRIAÇÃO DE NOVOS TIPOS
 typedef int DataType;
 

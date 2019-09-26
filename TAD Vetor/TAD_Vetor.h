@@ -10,6 +10,7 @@ typedef struct{
 
 //CRIAÇÃO DE NOVOS TIPOS
 typedef int DataType;
+
 typedef enum {false,true} Boolean;
 
 //PROTOTIPO DAS FUNCOES

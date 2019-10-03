@@ -93,7 +93,9 @@ Pessoa *agenda_removerPessoa(Agenda *agenda, char *email){
 }
 
 void pessoa_desalocar(Pessoa *p){
-    
+    free(p->email);
+    free(p->nome); 
+    free(p);   
 }
 
 int main(){

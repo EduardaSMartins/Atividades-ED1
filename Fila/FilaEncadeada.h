@@ -59,7 +59,7 @@ Tipo* fila_remover1(Fila* f){
     Tipo* elem = &aux->dado;
     f->prim = f->prim->prox;
     f->qtde--;
-    no_destruir(aux);
+    no_destruir(aux);   
     *elem = f->prim->dado;
     return elem;
 }

@@ -22,8 +22,8 @@ typedef struct{
 
 // -------------------- PROTÓTIPOS DAS FUNÇÕES -------------------- //
 
-//No* criaNo();
-//No* criarNo(int linha, int coluna, int valor);
+No* criaNo();
+No* criarNo(int linha, int coluna, int valor);
 MatrizEsparsa *criarMatriz(int qtdeLinhas, int qtdeColunas);
 No* posicaoLinha(No* sentinela, int coluna);
 No* posicaoColuna(No* sentinela, int linha);
@@ -33,8 +33,8 @@ int verifica(MatrizEsparsa *m, int linha, int coluna, int valor);
 int inserir(MatrizEsparsa *m, int linha, int coluna, int valor);
 int remover(MatrizEsparsa *m, int linha, int coluna);
 int acessar(MatrizEsparsa *m, int linha, int coluna);
-//void imprimir(MatrizEsparsa *m);
-//void desalocar(MatrizEsparsa *m);
+void imprimir(MatrizEsparsa *m);
+void desalocar(MatrizEsparsa *m);
 
 // --------------------- IMPLEMENTAÇÃO --------------------------- //
 

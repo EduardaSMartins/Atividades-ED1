@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "filaprioridadecircular.h": "c",
-        "filaprioridadeencadeada.h": "c"
+        "filaprioridadeencadeada.h": "c",
+        "listaduplamenteencadeada.h": "c"
     }
 }
